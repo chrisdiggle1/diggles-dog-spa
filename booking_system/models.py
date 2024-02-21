@@ -35,7 +35,7 @@ class Services(models.Model):
     `return self.service_name` A string representing the name of the service.
     """
     service_name = models.CharField(max_length=100)
-    cost = models.cost = models.DecimalField(max_digits=8, decimal_places=2)
+    cost = models.DecimalField(max_digits=8, decimal_places=2)
     description = models.CharField(max_length=500, blank=True)
     duration = models.DurationField(
         help_text="Estimated duration of the service")
