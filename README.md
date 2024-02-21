@@ -38,7 +38,9 @@ I am responsive image to go here
 
 ### Data Base Design (ERD)
 
-ERD image to go here
+The The Entity Relationship Diagram (ERD) illustrates the structure of the database which lies at the core of the functionality of the site:
+
+![ERD](/static/documentation/erd.png)
 
 ## User Experience - UX
 
