@@ -107,6 +107,23 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 ### Surface
 
+#### Color Scheme and Fonts
+
+- Me and my children have chosen the below colours for the website:
+
+  - #F1DAC4 (a creamy beige)
+  - #A69CAC (a soft lavender)
+  - #474973 (a deep navy)
+
+<details>
+<summary>Colour Pallette</summary>
+<img src="static/images/colour-pallette.png">
+</details>
+
+<br>
+
+The beige makes the site feel warm and inviting, the lavender adds a hint of luxury, and the navy brings a serious, dependable feel. Together, these colors make your site look and feel cozy yet professional, perfect for a dog spa.
+
 ## Agile Development
 
 ## Current Features
