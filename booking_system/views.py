@@ -7,3 +7,16 @@ from .models import Booking
 class HomeView(generic.ListView):
     queryset = Booking.objects.all()
     template_name = "index.html"
+
+
+def about(request):
+    return render(request, 'about.html')
+
+def price_list(request):
+    return render(request, 'price_list.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def login(request):
+    return render(request, 'login.html')

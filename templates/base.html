@@ -32,12 +32,12 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home" style="color: #F1DAC4;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about" style="color: #F1DAC4;">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#price list" style="color: #F1DAC4;">Price List</a>
+                    <li class="nav-item"><a class="nav-link" href="/" style="color: #F1DAC4;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}" style="color: #F1DAC4;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'price_list' %}" style="color: #F1DAC4;">Price List</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#register" style="color: #F1DAC4;">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#login" style="color: #F1DAC4;">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}" style="color: #F1DAC4;">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" style="color: #F1DAC4;">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -45,6 +45,12 @@
 
     <!-- Alert Box -->
     <h1>Diggles Dog Spa</h1>
+
+    <!-- Main content goes here -->
+    <div class="container mt-5" style="margin-top: 100px;">
+        {% block content %}
+        {% endblock %}
+    </div>
 
     <!-- Footer -->
     <footer class="mt-auto py-3 fixed-bottom" style="background-color: #474973;">
