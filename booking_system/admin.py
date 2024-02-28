@@ -19,11 +19,10 @@ class BookingAdmin(admin.ModelAdmin):
     Register and view the Booking model in the Admin area
     """
     list_display = ('username', 'service_name', 'dog_name',
-                    'date_of_booking', 'appointment_time')
+                    'date_of_booking', 'appointment_time', 'confirmed')
     list_filter = ('username', 'dog_name', 'date_of_booking')
     search_fields = ['username', 'dog_name']
     actions = ['confirm_booking']
 
     def confirm_booking(self, request, queryset):
         queryset.update(confirmed=True)
-    
