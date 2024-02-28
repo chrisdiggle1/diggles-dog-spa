@@ -57,6 +57,7 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 |                            | 1B  | As a site visitor I can see the relevant information so that I can decide if I want to register for an account and become a customer. |
 |                            | 1C  | As a site visitor I can access different pages on the site so that I can smoothly navigate through the functionality of the site. |
 |                            | 1D  | As a customer I can view detailed information about each grooming service so that I can make a decision on what service I would like my dog to have. |
+|                            | 1E  | As a site visitor I can **click and view the sites social media ** so that I can view more information via social media. |
 | **REGISTRATION AND USER ACCOUNTS** |     |            |
 |                            | 2A  | As a customer I can create an account so that I can book my dog in for different grooming services. |
 |                            | 2B  | As a customer I can use my created account information so that I can log into my account and access my information. |
