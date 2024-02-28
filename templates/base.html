@@ -8,13 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    {% block css %}
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    {% endblock %}
 
 
     <title>Diggles Dog Spa</title>
@@ -23,11 +24,52 @@
 <body>
 
     <!-- Naigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" style="background-color: #474973;">
+        <div class="container px-4">
+            <a class="navbar-brand " href="#page-top" style="color: #F1DAC4;">Diggles Dog Spa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" style="color: #F1DAC4;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" style="color: #F1DAC4;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#price list" style="color: #F1DAC4;">Price List</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#register" style="color: #F1DAC4;">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login" style="color: #F1DAC4;">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Alert Box -->
     <h1>Diggles Dog Spa</h1>
 
     <!-- Footer -->
+    <footer class="mt-auto py-3 fixed-bottom" style="background-color: #474973;">
+        <div class="container text-center">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#" style="color: #F1DAC4;">
+                        <i class="fa-brands fa-facebook fa-lg"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: #F1DAC4;">
+                        <i class="fa-brands fa-instagram fa-lg"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: #F1DAC4;">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="m-0" style="color: #F1DAC4;">Copyright &copy; Diggles Dog Spa</p>
+            <p class="m-0" style="color: #F1DAC4;">This has been created for education purposes only</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
