@@ -74,6 +74,36 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 ### Skeleton
 
+#### Wireframes
+
+[Balsamiq Wireframes](https://balsamiq.com/) was used to created the below wireframes for mobile and desktop devices.
+
+<details>
+<summary>Home Page</summary>
+<img src="static/images/wireframe-homepage.png">
+</details>
+
+<br>
+
+<details>
+<summary>Create Account</summary>
+<img src="static/images/wireframe-create-account.png">
+</details>
+
+<br>
+
+<details>
+<summary>Sign In</summary>
+<img src="static/images/wireframe-sign-in.png">
+</details>
+
+<br>
+
+<details>
+<summary>Book Your Pups Cut</summary>
+<img src="static/images/wireframe-book-a-cut.png">
+</details>
+
 ### Surface
 
 ## Agile Development
