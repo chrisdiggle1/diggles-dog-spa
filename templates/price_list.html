@@ -1,9 +1,57 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Price List</h2>
-    <p>Here you can find the prices for all our services.</p>
+<div class="container mt-5 text-center">
+    <h2 class="mb-4">Price List</h2>
+</div>
+<div class="container mt-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <p class="pricelist-text">Early grooming is not just beneficial for puppies; it's crucial for their
+                development and well-being. Starting at around 10 to 12 weeks of age, shortly after their second
+                vaccination, introduces them to grooming in a positive and stress-free manner. At Diggles Dog Spa, we
+                specialize in making your puppy's first grooming experience enjoyable and full of gentle care.
+
+                Our expert team focuses on building trust and comfort, ensuring that your puppy views grooming as a time
+                for pampering. By introducing them to professional grooming early on, we help instill good grooming
+                habits, setting the stage for a lifetime of healthy grooming routines. Choose Diggles Dog Spa for a
+                nurturing introduction to grooming, tailored to meet the unique needs of your growing puppy.</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Example for one service, replicate for others -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">Full-Service Grooming</h5>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-custom-width" data-bs-toggle="modal"
+                        data-bs-target="#service1Modal">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
+</div>
+</div>
+<!-- Modals for service details -->
+<div class="modal fade" id="service1Modal" tabindex="-1" aria-labelledby="service1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="service1ModalLabel">Full-Service Grooming</h5>
+            </div>
+            <div class="modal-body">
+                Includes a bath with natural shampoo, blow dry, full-body haircut, ear cleaning, nail trimming, and anal
+                gland expression.
+                <p>Price: £XX</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Book Now</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
