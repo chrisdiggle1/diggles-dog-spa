@@ -81,28 +81,28 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 <details>
 <summary>Home Page</summary>
-<img src="static/images/wireframe-homepage.png">
+<img src="static/documentation/wireframe-homepage.png">
 </details>
 
 <br>
 
 <details>
 <summary>Create Account</summary>
-<img src="static/images/wireframe-create-account.png">
+<img src="static/documentation/wireframe-create-account.png">
 </details>
 
 <br>
 
 <details>
 <summary>Sign In</summary>
-<img src="static/images/wireframe-sign-in.png">
+<img src="static/documentation/wireframe-sign-in.png">
 </details>
 
 <br>
 
 <details>
 <summary>Book Your Pups Cut</summary>
-<img src="static/images/wireframe-book-a-cut.png">
+<img src="static/documentation/wireframe-book-a-cut.png">
 </details>
 
 ### Surface
@@ -117,7 +117,7 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 <details>
 <summary>Colour Pallette</summary>
-<img src="static/images/colour-pallette.png">
+<img src="static/documentation/colour-pallette.png">
 </details>
 
 <br>
@@ -127,6 +127,13 @@ The beige makes the site feel warm and inviting, the lavender adds a hint of lux
 ## Agile Development
 
 ## Current Features
+
+### Header and Navigation
+
+<details>
+<summary>Navbar display on mobile devices</summary>
+<img src="static/documentation/navbar-mobile.png">
+</details>
 
 ## Future Features
 
