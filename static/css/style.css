@@ -5,7 +5,7 @@
 body {
     background-color: #FFFFFF;
     font-family: "Madimi One", sans-serif;
-    color: #927D97;
+    color: #474973;
 }
 
 .body-text,
@@ -15,12 +15,29 @@ body {
     font-style: normal;
 }
 
-
 /* navbar and footer */
 
 .navbar,
 footer {
     font-family: 'Nunito Sans', sans-serif;
+}
+
+
+/* homepage */
+
+.home-text {
+    color: #474973;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+.home-text:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -48,4 +65,19 @@ footer {
 .content-area {
     padding-top: 100px;
     padding-bottom: 20px;
+}
+
+
+/*Media queries */
+
+@media (max-width: 768px) {
+    .home-text {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-text {
+        font-size: 1em;
+    }
 }

@@ -3,14 +3,14 @@
 {% block content %}
 
 <div class="container mt-4 text-center">
-    <h1 class="mb-4">Hi there, {{ user.username }}</h1>
+    <h1 class="mb-4" style="color: #474973;">Hi there, {{ user.username }}</h1>
 </div>
 
 <div class="container mt-4">
     <div class="row">
         <!-- Upcoming Bookings Section -->
         <div class="col-md-6 mb-3">
-            <h2 class="mb-4">Upcoming Bookings</h2>
+            <h2 class="mb-4" style="color: #474973;">Upcoming Bookings</h2>
             {% for booking in object_list %}
             <div class="card mb-3">
                 <!-- Added mb-3 for spacing between multiple booking cards -->
@@ -34,7 +34,7 @@
 
         <!-- My Account Details Section -->
         <div class="col-md-6 mb-3">
-            <h2 class="mb-4">My Account Details</h2>
+            <h2 class="mb-4" style="color: #474973;">My Account Details</h2>
             <div class="card">
                 <div class="card-header">
                     Account Details
