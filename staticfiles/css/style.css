@@ -5,7 +5,7 @@
 body {
     background-color: #FFFFFF;
     font-family: "Madimi One", sans-serif;
-    color: #927D97;
+    color: #474973;
 }
 
 .body-text,
@@ -15,7 +15,6 @@ body {
     font-style: normal;
 }
 
-
 /* navbar and footer */
 
 .navbar,
@@ -23,6 +22,48 @@ footer {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+.navbar-toggler {
+    border-color: rgba(241, 218, 196, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23F1DAC4' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* homepage */
+
+.home-text {
+    color: #474973;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.home-text:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+
+/* about page */
+
+.services-list li {
+    margin-bottom: 20px;
+}
+
+.about-content p, .about-content li {
+    font-size: 1.3em;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
 
 /* my account page */
 
@@ -48,4 +89,36 @@ footer {
 .content-area {
     padding-top: 100px;
     padding-bottom: 20px;
+}
+
+
+/*Media queries */
+
+/* Smaller font size for tablets */
+
+@media (max-width: 768px) {
+    .home-text {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content p, .about-content li {
+        font-size: 1.1em;
+    }
+}
+
+
+/* Smaller font size for phones */
+
+@media (max-width: 576px) {
+    .home-text {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content p, .about-content li {
+        font-size: 1em;
+    }
 }

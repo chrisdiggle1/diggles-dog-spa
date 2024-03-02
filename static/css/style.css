@@ -24,7 +24,6 @@ footer {
 
 .navbar-toggler {
     border-color: rgba(241, 218, 196, 0.5);
-    /* Optional: changes the border color */
 }
 
 .navbar-toggler-icon {
@@ -52,7 +51,7 @@ footer {
 /* about page */
 
 .services-list li {
-    margin-bottom: 20px; /* Adjust this value to increase or decrease the space */
+    margin-bottom: 20px;
 }
 
 .about-content p, .about-content li {
@@ -120,6 +119,6 @@ footer {
 
 @media (max-width: 576px) {
     .about-content p, .about-content li {
-        font-size: 1em; /* Adjust for phones */
+        font-size: 1em;
     }
 }
