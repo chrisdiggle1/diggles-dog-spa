@@ -49,6 +49,23 @@ footer {
 }
 
 
+/* about page */
+
+.services-list li {
+    margin-bottom: 20px; /* Adjust this value to increase or decrease the space */
+}
+
+.about-content p, .about-content li {
+    font-size: 1.3em;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
 /* my account page */
 
 .card {
@@ -78,14 +95,31 @@ footer {
 
 /*Media queries */
 
+/* Smaller font size for tablets */
+
 @media (max-width: 768px) {
     .home-text {
         font-size: 1.2em;
     }
 }
 
+@media (max-width: 768px) {
+    .about-content p, .about-content li {
+        font-size: 1.1em;
+    }
+}
+
+
+/* Smaller font size for phones */
+
 @media (max-width: 576px) {
     .home-text {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content p, .about-content li {
+        font-size: 1em; /* Adjust for phones */
     }
 }
