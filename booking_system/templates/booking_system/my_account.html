@@ -2,17 +2,54 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
-<h1>Upcoming Appointments</h1>
-{% for booking in object_list %}
-<div class="card">
-    <p>Appointment Date: {{ booking.date_of_booking|date:"l j F Y" }}</p>
-    <p>Appointment Time: {{ booking.appointment_time|date:"g a" }}</p>
-    <p>Username: {{ booking.username }}</p>
-    <p>Dogs name: {{ booking.dog_name }}</p>
-    <p>Service Booked: {{ booking.service_name }}</p> 
+<div class="container mt-4 text-center">
+    <h1 class="mb-4">Hi there, {{ user.username }}</h1>
 </div>
-{% endfor %}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Upcoming Bookings Section -->
+        <div class="col-md-6 mb-3">
+            <h2 class="mb-4">Upcoming Bookings</h2>
+            {% for booking in object_list %}
+            <div class="card mb-3">
+                <!-- Added mb-3 for spacing between multiple booking cards -->
+                <div class="card-header">
+                    Booking Details
+                </div>
+                <div class="card-body">
+                    <p>Appointment Date: {{ booking.date_of_booking|date:"l j F Y" }}</p>
+                    <p>Appointment Time: {{ booking.appointment_time|date:"g a" }}</p>
+                    <p>Username: {{ booking.username }}</p>
+                    <p>Dogs name: {{ booking.dog_name }}</p>
+                    <p>Service Booked: {{ booking.service_name }}</p>
+                    <div class="d-flex justify-content-around mt-3">
+                        <button class="btn btn-primary me-2" type="button">Edit Appointment</button>
+                        <button class="btn btn-danger ms-2" type="button">Cancel Appointment</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- My Account Details Section -->
+        <div class="col-md-6 mb-3">
+            <h2 class="mb-4">My Account Details</h2>
+            <div class="card">
+                <div class="card-header">
+                    Account Details
+                </div>
+                <div class="card-body">
+                    <p>Username: </p>
+                    <p>Email: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
