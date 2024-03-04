@@ -78,6 +78,39 @@ footer {
     width: 150px;
 }
 
+.btn-more-info {
+    background-color: #474973;
+    color: #F1DAC4;
+    border: none;
+}
+
+.btn-more-info:hover {
+    background-color: #A69CAC;
+    color: #474973;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.btn-custom-modal {
+    background-color: #474973;
+    color: #F1DAC4;
+    border: none;
+}
+
+.btn-custom-modal:hover {
+    background-color: #A69CAC;
+    color: #474973;
+}
+
 /* my account page */
 
 .card {
