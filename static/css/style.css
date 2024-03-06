@@ -8,6 +8,13 @@ body {
     color: #474973;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .body-text,
 .madimi-one-regular {
     font-family: "Madimi One", sans-serif;
@@ -28,6 +35,10 @@ footer {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23F1DAC4' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.content-area {
+    flex: 1;
 }
 
 /* homepage */
@@ -160,37 +171,54 @@ footer {
 
 /*Media queries */
 
-/* Smaller font size for tablets */
+/* Media queries for tablets */
 
 @media (max-width: 768px) {
-    .home-text {
-        font-size: 1.2em;
-    }
-
+    .home-text,
     .about-content p,
-    .about-content li {
-        font-size: 1.2em;
-    }
-
+    .about-content li,
     .pricelist-text {
         font-size: 1.2em;
     }
+
+    .login p {
+        font-size: 20px;
+    }
+
+    .login .btn {
+        font-size: 18px;
+    }
+
+    .login .col-md-8 {
+        padding: 0 15px;
+    }
+
 }
 
 
-/* Smaller font size for phones */
+/* Media queries for smaller devices */
 
 @media (max-width: 576px) {
-    .home-text {
-        font-size: 1em;
-    }
-
+    .home-text,
     .about-content p,
-    .about-content li {
-        font-size: 1em;
-    }
-
+    .about-content li,
     .pricelist-text {
         font-size: 1em;
+    }
+
+    .login p {
+        font-size: 18px;
+    }
+    .login .btn {
+        font-size: 16px;
+    }
+
+    .login .col-md-8 {
+        padding: 0 10px;
+    }
+
+    .login a {
+        font-size: 16px;
+        padding: 5px;
     }
 }
