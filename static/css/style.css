@@ -54,21 +54,22 @@ footer {
     margin-bottom: 20px;
 }
 
-.about-content p, .about-content li {
+.about-content p,
+.about-content li {
     font-size: 1.3em;
 }
 
 .about-image {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
 
 /* price list page */
 
-.pricelist-text  {
+.pricelist-text {
     margin-bottom: 2rem;
     font-size: 1.2em;
     color: #474973;
@@ -111,6 +112,25 @@ footer {
     color: #474973;
 }
 
+
+/* login page */
+
+.login-text {
+    color: #474973;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.login-text:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+
 /* my account page */
 
 .card {
@@ -147,10 +167,11 @@ footer {
         font-size: 1.2em;
     }
 
-    .about-content p, .about-content li {
+    .about-content p,
+    .about-content li {
         font-size: 1.2em;
     }
-    
+
     .pricelist-text {
         font-size: 1.2em;
     }
@@ -164,7 +185,8 @@ footer {
         font-size: 1em;
     }
 
-    .about-content p, .about-content li {
+    .about-content p,
+    .about-content li {
         font-size: 1em;
     }
 
