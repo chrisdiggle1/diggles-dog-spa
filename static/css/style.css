@@ -168,6 +168,12 @@ footer {
     padding-bottom: 20px;
 }
 
+.alert-dismissible {
+    padding-right: 2rem;
+    margin-top: 3rem;
+    margin-bottom: -4rem;
+}
+
 
 /*Media queries */
 

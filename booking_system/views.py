@@ -6,7 +6,7 @@ from django.contrib.auth.views import LogoutView
 from django.contrib import messages
 from django.urls import reverse_lazy
 
-# Create your views here.
+
 class BookingsList(generic.ListView):
     model = Booking
     queryset = Booking.objects.all()
