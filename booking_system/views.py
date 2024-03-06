@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Booking
 from datetime import date
+from django.contrib.auth.views import LogoutView
+from django.contrib import messages
+from django.urls import reverse_lazy
 
 # Create your views here.
 class BookingsList(generic.ListView):
@@ -10,6 +13,13 @@ class BookingsList(generic.ListView):
     template_name = "booking_system/my_account.html"
     paginate_by = 20
     queryset = Booking.objects.filter(date_of_booking__gte=date.today()).order_by('date_of_booking', 'appointment_time')
+
+class CustomLogoutView(LogoutView):
+    next_page = reverse_lazy('home')
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(request, "You have been successfully logged out.")
+        return super().dispatch(request, *args, **kwargs)
 
 
 def home(request):
