@@ -48,12 +48,18 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'price_list' %}" style="color: #F1DAC4;">Price
                             List</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'my_account' %}" style="color: #F1DAC4;">My
+                            Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"
+                            style="color: #F1DAC4;">Logout</a>
+                        {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"
                             style="color: #F1DAC4;">Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" style="color: #F1DAC4;">Login</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'my_account' %}" style="color: #F1DAC4;">My
-                            Account</a></li>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
