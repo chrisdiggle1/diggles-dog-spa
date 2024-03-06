@@ -141,6 +141,14 @@ footer {
     transition: background-color 0.3s ease;
 }
 
+.invalid-feedback {
+    color: black;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: black;
+    background-image: none;
+}
 
 /* my account page */
 

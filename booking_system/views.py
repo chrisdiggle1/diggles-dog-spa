@@ -32,7 +32,7 @@ def price_list(request):
     return render(request, 'price_list.html')
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'account/signup.html')
 
 def login(request):
     return render(request, 'account/login.html')
