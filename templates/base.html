@@ -51,6 +51,8 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'my_account' %}" style="color: #F1DAC4;">My
                             Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'book_service' %}"
+                            style="color: #F1DAC4;">Book a Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"
                             style="color: #F1DAC4;">Logout</a>
                         {% else %}

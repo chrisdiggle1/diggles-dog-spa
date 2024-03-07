@@ -1,15 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Booking
 from datetime import date
 from django.contrib.auth.views import LogoutView
 from django.contrib import messages
 from django.urls import reverse_lazy
+from .forms import BookingForm
+from django.contrib import messages
+
+
+def book_service(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.username = request.user
+            booking.save()
+            messages.success(request, 'Your booking has been successfully made!')
+            return redirect('home')
+    else:
+        form = BookingForm()
+    return render(request, 'booking/book_service.html', {'form': form})
 
 
 class BookingsList(generic.ListView):
     model = Booking
-    queryset = Booking.objects.all()
     template_name = "booking_system/my_account.html"
     paginate_by = 20
     queryset = Booking.objects.filter(date_of_booking__gte=date.today()).order_by('date_of_booking', 'appointment_time')
