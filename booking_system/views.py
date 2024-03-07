@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from .forms import BookingForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def book_service(request):
@@ -16,18 +17,26 @@ def book_service(request):
             booking = form.save(commit=False)
             booking.username = request.user
             booking.save()
-            messages.success(request, 'Your booking has been successfully made!')
+            messages.success(
+                request, 'Your booking has been successfully made!')
             return redirect('home')
     else:
         form = BookingForm()
     return render(request, 'booking/book_service.html', {'form': form})
 
 
-class BookingsList(generic.ListView):
+class BookingsList(LoginRequiredMixin, generic.ListView):
     model = Booking
     template_name = "booking_system/my_account.html"
     paginate_by = 20
-    queryset = Booking.objects.filter(date_of_booking__gte=date.today()).order_by('date_of_booking', 'appointment_time')
+
+    def get_queryset(self):
+        """Override to return bookings for the current user only."""
+        return Booking.objects.filter(
+            username=self.request.user,
+            date_of_booking__gte=date.today()
+        ).order_by('date_of_booking', 'appointment_time')
+
 
 class CustomLogoutView(LogoutView):
     next_page = reverse_lazy('home')
