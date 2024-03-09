@@ -24,7 +24,6 @@ BOOKING_TIME = ((datetime.time(9, 0, 0), '9:00am'),
                 )
 
 
-# Create your models here.
 class Services(models.Model):
     """
     Model representing the services offered, detailing the service's name, 
@@ -35,13 +34,20 @@ class Services(models.Model):
     `return self.service_name` A string representing the name of the service.
     """
     service_name = models.CharField(max_length=100)
-    cost = models.DecimalField(max_digits=8, decimal_places=2)
+    cost = models.TextField(
+        help_text="Enter the cost range depending on dog size, e.g., 'Small Dogs: £35, Large Dogs: £100'")
     description = models.CharField(max_length=500, blank=True)
     duration = models.DurationField(
         help_text="Estimated duration of the service")
 
+    def formatted_duration(self):
+        total_seconds = self.duration.total_seconds()
+        hours = int(total_seconds // 3600)
+        minutes = int((total_seconds % 3600) // 60)
+        return f"{hours}h {minutes}min"
+
     class Meta:
-        ordering = ['service_name', 'cost', 'duration']
+        ordering = ['service_name', 'description', 'cost', 'duration']
 
     def __str__(self):
         return self.service_name

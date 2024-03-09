@@ -22,126 +22,44 @@
 <div class="row">
     <div class="col-lg-6">
         <div class="row">
-            <!-- Full Service Grooming Card -->
+            <!-- Service cards -->
+            {% for service in services %}
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Full-Service Grooming</h5>
+                        <h5 class="card-title text-center">{{ service.service_name }}</h5>
                         <div class="d-flex justify-content-center">
                             <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service1Modal">Click here for more Info</button>
+                                data-bs-target="#service{{ forloop.counter }}Modal">Click here for more Info</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Basic Bath & Tidy Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Basic Bath & Tidy</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service2Modal">Click here for more Info</button>
+
+            <!-- Service Modals -->
+            <div class="modal fade" id="service{{ forloop.counter }}Modal" tabindex="-1"
+                aria-labelledby="service{{ forloop.counter }}ModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="service{{ forloop.counter }}ModalLabel">
+                                {{ service.service_name }}</h5>
+                        </div>
+                        <div class="modal-body">
+                            {{ service.description }}
+                            <hr>
+                            <p>{{ service.cost|linebreaksbr }}</p>
+                            <hr>
+                            <p>Duration: {{ service.formatted_duration }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-custom-modal">Book Now</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Puppy Introduction to Grooming Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Puppy Intro to Grooming</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service3Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- De-Shedding Treatment Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">De-Shedding Treatment</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service4Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Spa Packages Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Spa Packages</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service5Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Teeth Brushing Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Teeth Brushing</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service6Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Nail Trimming & Grinding Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nail Trimming & Grinding</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service7Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Ear Cleaning Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Ear Cleaning</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service8Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Eye Cleaning Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Eye Cleaning</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service9Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Flea & Tick Treatment Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Flea & Tick Treatment</h5>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-more-info btn-custom-width" data-bs-toggle="modal"
-                                data-bs-target="#service10Modal">Click here for more Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -240,235 +158,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Full-Service Grooming Modal -->
-<div class="modal fade" id="service1Modal" tabindex="-1" aria-labelledby="service1ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service1ModalLabel">Full-Service Grooming</h5>
-            </div>
-            <div class="modal-body">
-                Includes a bath with natural shampoo, blow dry, full-body haircut, ear cleaning, nail trimming, and anal
-                gland expression.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £35</p>
-                <p>Medium Dogs: £50</p>
-                <p>Large Dogs: £70</p>
-                <p>Extra Large Dogs: £100</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Basic Bath & Tidy Modal -->
-<div class="modal fade" id="service2Modal" tabindex="-1" aria-labelledby="service2ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service2ModalLabel">Basic Bath & Tidy</h5>
-            </div>
-            <div class="modal-body">
-                For dogs that need a simple clean-up. Includes a bath, blow dry and light trimming (if needed).
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £20</p>
-                <p>Medium Dogs: £30</p>
-                <p>Large Dogs: £40</p>
-                <p>Extra Large Dogs: £60</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Puppy Introduction to Grooming Modal -->
-<div class="modal fade" id="service3Modal" tabindex="-1" aria-labelledby="service3ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service3ModalLabel">Puppy Introduction to Grooming</h5>
-            </div>
-            <div class="modal-body">
-                A gentle introduction to grooming for puppies up to 6 months old, including a bath, light brushing, and
-                nail trim.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>All puppies under 20 weeks: £15</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- De-Shedding Treatment Modal -->
-<div class="modal fade" id="service4Modal" tabindex="-1" aria-labelledby="service4ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service4ModalLabel">De-Shedding Treatment</h5>
-            </div>
-            <div class="modal-body">
-                A special treatment to reduce shedding, including a bath with a de-shedding shampoo, blow dry, and
-                thorough brushing to remove loose fur.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £10</p>
-                <p>Medium Dogs: £15</p>
-                <p>Large Dogs: £20</p>
-                <p>Extra Large Dogs: £25</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Spa Packages Modal -->
-<div class="modal fade" id="service5Modal" tabindex="-1" aria-labelledby="service5ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service5ModalLabel">Spa Packages</h5>
-            </div>
-            <div class="modal-body">
-                Luxurious treatments including aromatherapy baths, moisturizing paw and nose treatments, and relaxing
-                massages.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £50</p>
-                <p>Medium Dogs: £60</p>
-                <p>Large Dogs: £70</p>
-                <p>Extra Large Dogs: £80</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Teeth Brushing Modal -->
-<div class="modal fade" id="service6Modal" tabindex="-1" aria-labelledby="service6ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service6ModalLabel">Teeth Brushing</h5>
-            </div>
-            <div class="modal-body">
-                Dental hygiene session including teeth brushing and breath freshening.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>All Dogs: £10</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Nail Trimming & Grinding Modal -->
-<div class="modal fade" id="service7Modal" tabindex="-1" aria-labelledby="service7ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service7ModalLabel">Nail Trimming & Grinding</h5>
-            </div>
-            <div class="modal-body">
-                Nail trimming to a safe length and grinding to smooth out rough edges.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £10</p>
-                <p>Medium Dogs: £12</p>
-                <p>Large Dogs: £15</p>
-                <p>Extra Large Dogs: £18</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Ear Cleaning Modal -->
-<div class="modal fade" id="service8Modal" tabindex="-1" aria-labelledby="service8ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service8ModalLabel">Ear Cleaning</h5>
-            </div>
-            <div class="modal-body">
-                Gentle cleaning of the ears to remove dirt and wax, helping to prevent infections.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £5</p>
-                <p>Medium Dogs: £7</p>
-                <p>Large Dogs: £10</p>
-                <p>Extra Large Dogs: £12</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Eye Cleaning Modal -->
-<div class="modal fade" id="service9Modal" tabindex="-1" aria-labelledby="service9ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service9ModalLabel">Eye Cleaning</h5>
-            </div>
-            <div class="modal-body">
-                Careful cleaning around the eyes to remove tear stains.
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £5</p>
-                <p>Medium Dogs: £7</p>
-                <p>Large Dogs: £10</p>
-                <p>Extra Large Dogs: £12</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Flea & Tick Treatment Modal -->
-<div class="modal fade" id="service10Modal" tabindex="-1" aria-labelledby="service10ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="service10ModalLabel">Flea & Tick Treatment</h5>
-            </div>
-            <div class="modal-body">
-                A deep-cleansing bath with flea and tick treatment to rid your pet of pests (Note: This should not
-                replace regular flea and tick prevention methods).
-                <hr>
-                <p>Price as listed below depending on dog size:</p>
-                <p>Small Dogs: £10</p>
-                <p>Medium Dogs: £12</p>
-                <p>Large Dogs: £15</p>
-                <p>Extra Large Dogs: £18</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-custom-modal">Book Now</button>
             </div>
         </div>
     </div>

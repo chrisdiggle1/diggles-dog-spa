@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .models import Booking
+from .models import Booking, Services
 from datetime import date
 from django.contrib.auth.views import LogoutView
 from django.contrib import messages
@@ -49,17 +49,23 @@ class CustomLogoutView(LogoutView):
 def home(request):
     return render(request, 'index.html')
 
+
 def about(request):
     return render(request, 'about.html')
 
+
 def price_list(request):
-    return render(request, 'price_list.html')
+    services = Services.objects.all()
+    return render(request, 'price_list.html', {'services': services})
+
 
 def register(request):
     return render(request, 'account/signup.html')
 
+
 def login(request):
     return render(request, 'account/login.html')
+
 
 def logout(request):
     return render(request, 'account/logout.html')
