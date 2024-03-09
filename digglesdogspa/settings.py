@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-chrisdiggle-digglesdogs-9lmwi9ubth7.ws-eu108.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-chrisdiggle-digglesdogs-9lmwi9ubth7.ws-eu108.gitpod.io', '.herokuapp.com']
 
 
 # Application definition
@@ -89,7 +90,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 WSGI_APPLICATION = 'digglesdogspa.wsgi.application'

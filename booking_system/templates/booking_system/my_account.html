@@ -13,7 +13,6 @@
             <h2 class="mb-4" style="color: #474973;">Upcoming Bookings</h2>
             {% for booking in object_list %}
             <div class="card mb-3">
-                <!-- Added mb-3 for spacing between multiple booking cards -->
                 <div class="card-header">
                     Booking Details
                 </div>
@@ -21,11 +20,32 @@
                     <p>Appointment Date: {{ booking.date_of_booking|date:"l j F Y" }}</p>
                     <p>Appointment Time: {{ booking.appointment_time|date:"g a" }}</p>
                     <p>Username: {{ booking.username }}</p>
-                    <p>Dogs name: {{ booking.dog_name }}</p>
+                    <p>Dog's Name: {{ booking.dog_name }}</p>
                     <p>Service Booked: {{ booking.service_name }}</p>
                     <div class="d-flex justify-content-around mt-3">
-                        <button class="btn btn-primary me-2" type="button">Edit Appointment</button>
-                        <button class="btn btn-danger ms-2" type="button">Cancel Appointment</button>
+                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary me-2">Edit Appointment</a>
+                        <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"
+                            data-bs-target="#cancelModal{{ booking.id }}">Cancel Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cancellation Confirmation Modal -->
+            <div class="modal fade" id="cancelModal{{ booking.id }}" tabindex="-1"
+                aria-labelledby="cancelModalLabel{{ booking.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cancelModalLabel{{ booking.id }}">Confirm Cancellation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to cancel this booking?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep It</button>
+                            <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Yes, Cancel It</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,5 +84,5 @@
 </nav>
 {% endif %}
 
-<!-- index.html content ends here -->
+
 {% endblock %}

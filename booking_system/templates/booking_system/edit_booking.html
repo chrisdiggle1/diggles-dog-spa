@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block head_title %}{% trans "Edit Booking" %}{% endblock %}
+{% block content %}
+
+<div class="container mt-5 justify-content-center align-items-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 card push-down">
+            <div class="row text-center">
+                <div class="col-md-8 mt-3 pt-3 offset-md-2">
+                    <h1 class="text-center">{% trans "Edit Your Booking" %}</h1>
+                    <p style="font-size: 15px;">
+                        {% trans "Change your booking details below." %}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mt-3 offset-md-2">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="row text-center">
+                            <div class="col mb-4">
+                                <button class="btn btn-more-info" type="submit">{% trans "Save Changes" %}</button>
+                                <a href="{% url 'my_account' %}" class="btn btn-danger">{% trans "Cancel" %}</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

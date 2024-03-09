@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Booking, Services
 from datetime import date
@@ -19,10 +19,10 @@ def book_service(request):
             booking.save()
             messages.success(
                 request, 'Your booking has been successfully made!')
-            return redirect('home')
+            return redirect('my_account')
     else:
         form = BookingForm()
-    return render(request, 'booking/book_service.html', {'form': form})
+    return render(request, 'booking_system/book_service.html', {'form': form})
 
 
 class BookingsList(LoginRequiredMixin, generic.ListView):
@@ -44,6 +44,26 @@ class CustomLogoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):
         messages.success(request, "You have been successfully logged out.")
         return super().dispatch(request, *args, **kwargs)
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, username=request.user)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Booking updated successfully.')
+            return redirect('my_account')
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'booking_system/edit_booking.html', {'form': form})
+
+
+def cancel_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, username=request.user)
+    booking.delete()
+    messages.success(request, 'Booking cancelled successfully.')
+    return redirect('my_account')
 
 
 def home(request):
