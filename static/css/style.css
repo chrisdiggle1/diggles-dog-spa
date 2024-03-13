@@ -150,6 +150,10 @@ footer {
     background-image: none;
 }
 
+.form-group {
+    padding-top: 10px;
+}
+
 /* my account page */
 
 .card {
