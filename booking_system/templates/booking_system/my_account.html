@@ -67,6 +67,9 @@
                         {{ request.user.last_login|date:"H:i:s" }}</p>
                 </div>
             </div>
+            <div class="text-center mt-3">
+                <a href="{% url 'book_service' %}" class="btn btn-account-page btn-lg">Make A New Booking</a>
+            </div>
         </div>
     </div>
 </div>
