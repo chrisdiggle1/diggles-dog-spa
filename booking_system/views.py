@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
 
 
 def book_service(request):
@@ -17,6 +18,11 @@ def book_service(request):
             service_name = form.cleaned_data['service_name']
             date_of_booking = form.cleaned_data['date_of_booking']
             appointment_time = form.cleaned_data['appointment_time']
+
+            if date_of_booking < timezone.now().date():
+                messages.error(
+                    request, 'You cannot book appointments for dates that have already passed.')
+                return redirect('book_service')
 
             existing_appointments = Booking.objects.filter(
                 date_of_booking=date_of_booking, appointment_time=appointment_time)
