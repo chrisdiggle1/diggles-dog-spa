@@ -18,11 +18,18 @@ class BookingAdmin(admin.ModelAdmin):
     """
     Register and view the Booking model in the Admin area
     """
-    list_display = ('username', 'service_name', 'dog_name',
-                    'date_of_booking', 'appointment_time', 'confirmed')
-    list_filter = ('username', 'dog_name', 'date_of_booking')
-    search_fields = ['username', 'dog_name']
-    actions = ['confirm_booking']
+    list_display = ('username', 'service_name', 'dog_name', 'date_of_booking', 'appointment_time', 'status')
+    list_filter = ('username', 'service_name', 'dog_name', 'date_of_booking', 'status')
+    search_fields = ['username__username', 'dog_name']
+    actions = ['approve_booking', 'reject_booking']
 
-    def confirm_booking(self, request, queryset):
-        queryset.update(confirmed=True)
+    def approve_booking(self, request, queryset):
+        queryset.update(status='approved')
+        self.message_user(request, "Selected bookings have been approved.")
+
+    def reject_booking(self, request, queryset):
+        queryset.update(status='rejected')
+        self.message_user(request, "Selected bookings have been rejected.")
+
+    approve_booking.short_description = "Approve selected bookings"
+    reject_booking.short_description = "Reject selected bookings"

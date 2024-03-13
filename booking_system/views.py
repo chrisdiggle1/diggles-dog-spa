@@ -9,6 +9,7 @@ from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 
 def book_service(request):
@@ -105,3 +106,33 @@ def login(request):
 
 def logout(request):
     return render(request, 'account/logout.html')
+
+
+@login_required
+def dashboard(request):
+    bookings = Booking.objects.exclude(status='pending')
+    pending_approvals = Booking.objects.filter(status='pending')
+    approved_bookings = Booking.objects.filter(status='approved')
+    return render(request, 'booking_system/admin_dashboard.html', {
+        'bookings': bookings,
+        'pending_approvals': pending_approvals,
+        'approved_bookings': approved_bookings
+    })
+
+
+@login_required
+def approve_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    booking.status = 'approved'
+    booking.save()
+    messages.success(request, 'Booking approved successfully.')
+    return redirect('dashboard')
+
+
+@login_required
+def reject_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    booking.status = 'rejected'
+    booking.save()
+    messages.success(request, 'Booking rejected successfully.')
+    return redirect('dashboard')

@@ -22,13 +22,15 @@
                     <p>Username: {{ booking.username }}</p>
                     <p>Dog's Name: {{ booking.dog_name }}</p>
                     <p>Service Booked: {{ booking.service_name }}</p>
-                    <div class="confirmation-area {% if booking.confirmed %}confirmed{% else %}pending{% endif %}">
-                        {% if booking.confirmed %}
-                        <p class="confirmation-message text-success">Booking Confirmed</p>
+                    <p>Status: 
+                        {% if booking.status == 'approved' %}
+                        <span class="text-success">Approved</span>
+                        {% elif booking.status == 'rejected' %}
+                        <span class="text-danger">Rejected</span>
                         {% else %}
-                        <p class="confirmation-message text-danger">Booking Pending Confirmation</p>
+                        <span class="text-primary">Pending Approval</span>
                         {% endif %}
-                    </div>
+                    </p>
                     <div class="d-flex justify-content-around mt-3">
                         <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary me-2">Edit Appointment</a>
                         <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"

@@ -53,6 +53,13 @@ class Services(models.Model):
         return self.service_name
 
 
+STATUS = (
+    ('pending', 'Pending'),
+    ('approved', 'Approved'),
+    ('rejected', 'Rejected'),
+)
+
+
 class Booking(models.Model):
     """
     Model representing a booking made by the user, including  details about the user, 
@@ -65,12 +72,12 @@ class Booking(models.Model):
     dog_name = models.CharField(max_length=100)
     dog_breed = models.CharField(max_length=100, blank=True, null=True)
     service_name = models.ForeignKey(
-        Services, on_delete=models.CASCADE, related_name='service_name_booking')
+        'Services', on_delete=models.CASCADE, related_name='service_name_booking')
     date_of_booking = models.DateField()
     appointment_time = models.TimeField(choices=BOOKING_TIME)
     confirmed = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.CharField(choices=STATUS, default='pending', max_length=20)
 
     class Meta:
         ordering = ['service_name', 'date_of_booking', 'appointment_time']
