@@ -14,6 +14,16 @@ def book_service(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
+            service_name = form.cleaned_data['service_name']
+            date_of_booking = form.cleaned_data['date_of_booking']
+            appointment_time = form.cleaned_data['appointment_time']
+
+            existing_appointments = Booking.objects.filter(
+                date_of_booking=date_of_booking, appointment_time=appointment_time)
+            if existing_appointments.exists():
+                messages.error(
+                    request, 'This appointment slot is already booked. Please choose a different time.')
+                return redirect('book_service')
             booking = form.save(commit=False)
             booking.username = request.user
             booking.save()
