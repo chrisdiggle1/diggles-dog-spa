@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-chrisdiggle-digglesdogs-9lmwi9ubth7.ws-eu110.gitpod.io', '.herokuapp.com']
@@ -64,10 +64,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Email Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'chrisdiggle8@gmail.com'
+EMAIL_HOST_USER = 'chrisdiggle8@outlook.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
 MIDDLEWARE = [

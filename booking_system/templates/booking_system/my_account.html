@@ -60,8 +60,11 @@
                     Account Details
                 </div>
                 <div class="card-body">
-                    <p>Username: </p>
-                    <p>Email: </p>
+                    <p>Username: {{ request.user.username }}</p>
+                    <p>Email: {{ request.user.email }}</p>
+                    <p>Account Creation Date: {{ request.user.date_joined|date:"jS F Y" }}</p>
+                    <p>Last Login Date: {{ request.user.last_login|date:"jS F Y" }} at
+                        {{ request.user.last_login|date:"H:i:s" }}</p>
                 </div>
             </div>
         </div>
