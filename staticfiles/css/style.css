@@ -186,6 +186,19 @@ footer {
     margin-bottom: -4rem;
 }
 
+.btn-account-page {
+    background-color: #474973;
+    color: #F1DAC4;
+    border: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+} 
+
+.btn-account-page:hover {
+    background-color: #A69CAC;
+    color: #474973;
+}
+
 
 /*Media queries */
 
