@@ -23,6 +23,11 @@ body {
     font-style: normal;
 }
 
+h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
 /* navbar and footer */
 
 .navbar,
@@ -219,7 +224,25 @@ footer {
     text-align: center;
 }
 
+.admin-header {
+    padding-top: 50px;
+}
+
+form {
+    padding-top: 10px;
+    display: inline;
+    margin-right: 10px;
+}
+
 /*Media queries */
+
+@media (max-width: 1200px) {
+
+    form {
+        padding-top: 20px;
+        display: block;
+    }
+}
 
 /* Media queries for tablets */
 
@@ -247,7 +270,7 @@ footer {
 }
 
 
-/* Media queries for smaller devices */
+/* Media queries for mobiles devices */
 
 @media (max-width: 576px) {
 
@@ -274,4 +297,75 @@ footer {
         font-size: 16px;
         padding: 5px;
     }
+}
+
+/* Media queries for smaller devices */
+
+@media (max-width: 300px) {
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.20rem;
+        font-size: 1rem;
+        background-size: 20px 20px;
+    }
+
+    .navbar-brand {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-body ul {
+        padding-left: 50px;
+    }
+
+    .card-body ul li {
+        font-size: 0.8rem;
+        padding-right: 30px;
+        word-break: keep-all;
+        white-space: normal;
+    }
+
+    .card-body .row .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card-body h6 strong {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .btn-smaller {
+        font-size: 0.88rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    select {
+        width: 100%;
+        font-size: 0.8rem;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    .container .row .col-lg-6.card,
+    .container .row .col-md-8 {
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .btn.btn-more-info {
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+
 }

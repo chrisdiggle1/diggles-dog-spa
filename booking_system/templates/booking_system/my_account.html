@@ -32,8 +32,8 @@
                         {% endif %}
                     </p>
                     <div class="d-flex justify-content-around mt-3">
-                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary me-2">Edit Appointment</a>
-                        <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"
+                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary me-2 btn-smaller">Edit Appointment</a>
+                        <button type="button" class="btn btn-danger ms-2 btn-smaller" data-bs-toggle="modal"
                             data-bs-target="#cancelModal{{ booking.id }}">Cancel Appointment</button>
                     </div>
                 </div>
