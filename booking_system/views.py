@@ -5,7 +5,7 @@ from datetime import date
 from django.contrib.auth.views import LogoutView
 from django.contrib import messages
 from django.urls import reverse_lazy
-from .forms import BookingForm
+from .forms import BookingForm, ServiceForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
@@ -142,4 +142,32 @@ def reject_booking(request, booking_id):
     booking.status = 'rejected'
     booking.save()
     messages.success(request, 'Booking rejected successfully.')
+    return redirect('dashboard')
+
+
+@login_required
+@user_passes_test(is_superuser)
+def dashboard(request):
+    services = Services.objects.all()
+    return render(request, 'admin_dashboard.html', {'services': services})
+
+
+@login_required
+@user_passes_test(is_superuser)
+def add_service(request):
+    if request.method == 'POST':
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = ServiceForm()
+    return render(request, 'add_service.html', {'form': form})
+
+
+@login_required
+@user_passes_test(is_superuser)
+def delete_service(request, service_id):
+    service = Services.objects.get(id=service_id)
+    service.delete()
     return redirect('dashboard')

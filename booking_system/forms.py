@@ -1,5 +1,5 @@
 from django import forms
-from .models import Booking
+from .models import Booking, Services
 
 
 class BookingForm(forms.ModelForm):
@@ -10,3 +10,9 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'date_of_booking': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
+
+
+class ServiceForm(form.ModelsForm):
+    class Meta:
+        model = Services
+        fields = ['service_name', 'cost', 'description', 'duration']
