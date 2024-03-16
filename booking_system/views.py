@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.core.exceptions import PermissionDenied
 
 
 def book_service(request):
@@ -63,8 +64,13 @@ class CustomLogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
+@login_required
 def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id, username=request.user)
+    booking = get_object_or_404(Booking, id=booking_id)
+    
+    if booking.username != request.user:
+        raise PermissionDenied
+
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
@@ -75,9 +81,13 @@ def edit_booking(request, booking_id):
         form = BookingForm(instance=booking)
     return render(request, 'booking_system/edit_booking.html', {'form': form})
 
-
+@login_required
 def cancel_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id, username=request.user)
+    booking = get_object_or_404(Booking, id=booking_id)
+    
+    if booking.username != request.user:
+        raise PermissionDenied
+
     booking.delete()
     messages.success(request, 'Booking cancelled successfully.')
     return redirect('my_account')
