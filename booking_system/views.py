@@ -118,10 +118,12 @@ def dashboard(request):
     bookings = Booking.objects.exclude(status='pending')
     pending_approvals = Booking.objects.filter(status='pending')
     approved_bookings = Booking.objects.filter(status='approved')
+    services = Services.objects.all()
     return render(request, 'booking_system/admin_dashboard.html', {
         'bookings': bookings,
         'pending_approvals': pending_approvals,
-        'approved_bookings': approved_bookings
+        'approved_bookings': approved_bookings,
+        'services': services
     })
 
 
@@ -147,22 +149,16 @@ def reject_booking(request, booking_id):
 
 @login_required
 @user_passes_test(is_superuser)
-def dashboard(request):
-    services = Services.objects.all()
-    return render(request, 'booking_system/admin_dashboard.html', {'services': services})
-
-
-@login_required
-@user_passes_test(is_superuser)
 def add_service(request):
     if request.method == 'POST':
         form = ServiceForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Service added successfully.')
             return redirect('dashboard')
     else:
         form = ServiceForm()
-    return render(request, 'add_service.html', {'form': form})
+    return render(request, 'booking_system/add_service.html', {'form': form})
 
 
 @login_required
@@ -170,4 +166,5 @@ def add_service(request):
 def delete_service(request, service_id):
     service = Services.objects.get(id=service_id)
     service.delete()
+    messages.success(request, 'Service deleted successfully.')
     return redirect('dashboard')
