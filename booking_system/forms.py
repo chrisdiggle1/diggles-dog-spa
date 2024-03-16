@@ -12,7 +12,7 @@ class BookingForm(forms.ModelForm):
         }
 
 
-class ServiceForm(form.ModelsForm):
+class ServiceForm(forms.ModelForm):
     class Meta:
         model = Services
         fields = ['service_name', 'cost', 'description', 'duration']
