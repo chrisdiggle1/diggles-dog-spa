@@ -149,7 +149,7 @@ def reject_booking(request, booking_id):
 @user_passes_test(is_superuser)
 def dashboard(request):
     services = Services.objects.all()
-    return render(request, 'admin_dashboard.html', {'services': services})
+    return render(request, 'booking_system/admin_dashboard.html', {'services': services})
 
 
 @login_required
