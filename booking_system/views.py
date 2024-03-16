@@ -9,7 +9,7 @@ from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 def book_service(request):
@@ -108,7 +108,12 @@ def logout(request):
     return render(request, 'account/logout.html')
 
 
+def is_superuser(user):
+    return user.is_authenticated and user.is_superuser
+
+
 @login_required
+@user_passes_test(is_superuser)
 def dashboard(request):
     bookings = Booking.objects.exclude(status='pending')
     pending_approvals = Booking.objects.filter(status='pending')
@@ -121,6 +126,7 @@ def dashboard(request):
 
 
 @login_required
+@user_passes_test(is_superuser)
 def approve_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.status = 'approved'
@@ -130,6 +136,7 @@ def approve_booking(request, booking_id):
 
 
 @login_required
+@user_passes_test(is_superuser)
 def reject_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.status = 'rejected'
