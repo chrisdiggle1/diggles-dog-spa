@@ -1,6 +1,8 @@
 # Diggles Dog Spa
 
-I am responsive image to go here
+Developer: Chris Diggle
+
+![Mockup image](/static/images/amiresponsive.png)
 
 - [Live Site](https://diggles-dog-spa-4e32378de2f2.herokuapp.com/)
 - [GitHub Repo](https://github.com/chrisdiggle1/diggles-dog-spa)
@@ -34,7 +36,13 @@ I am responsive image to go here
 
 ## Introduction
 
+Welcome to Diggles Dog Spa, a fictitious luxury grooming and spa service created for my 4th Code Institute project. Diggles Dog Spa is designed to provide an exceptional pampering experience for dogs of all sizes and breeds. Our website serves as the primary platform for dog owners to explore our wide range of services, book and edit appointments, and stay updated with the latest in canine care and luxury grooming.
+
+The project was designed as the 4th portfolio project of the Code Institutes Full Stack Diploma Program. It was built using Django, Python, JS, CSS, and HTML. The data is stored in a PostgreSQL database created by Code Insitute.
+
 ### Project Goals
+
+The goal of the project was to build a webiste for dog owners to effortlessly book, edit and cancel appointments through a user-friendly interface ensuring a seamless experience for dog owners. For an administrator I have built a dashboard for approving or rejecting bookings, as well as adding and removing new services to the site to keep the spa's offerings current and responsive to clients needs. I want the project to provide exceptional service management and a pleasant experience for dog owners and site administrators.
 
 ### Data Base Design (ERD)
 
