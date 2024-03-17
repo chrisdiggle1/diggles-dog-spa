@@ -7,6 +7,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('price-list/', views.price_list, name='price_list'),
     path('accounts/', include('allauth.urls')),
+    path('signup/', views.register, name='signup'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('my-account/', views.BookingsList.as_view(), name='my_account'),

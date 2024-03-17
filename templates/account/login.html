@@ -10,9 +10,11 @@
           <h1 class="text-center">{% trans "Sign In" %}</h1>
 
           <p style="font-size: 20px;">
-            {% blocktrans %}Welcome to Diggles Dog Spa. To view your account or book a service, please log in. If
-            you have not created an account yet, then
-            <a href="{{ signup_url }}">sign up</a>.{% endblocktrans %}
+            {% blocktrans trimmed %}
+            Welcome to Diggles Dog Spa. To view your account or book a service, please log in.
+            If you have not created an account yet, then
+            {% endblocktrans %}
+            <a href="{% url 'signup' %}">{% trans "sign up" %}</a>.
           </p>
         </div>
       </div>
