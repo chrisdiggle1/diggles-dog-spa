@@ -3,7 +3,6 @@ from .models import Services, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# Register your models here.
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     """
@@ -18,8 +17,10 @@ class BookingAdmin(admin.ModelAdmin):
     """
     Register and view the Booking model in the Admin area
     """
-    list_display = ('username', 'service_name', 'dog_name', 'date_of_booking', 'appointment_time', 'status')
-    list_filter = ('username', 'service_name', 'dog_name', 'date_of_booking', 'status')
+    list_display = ('username', 'service_name', 'dog_name', 'date_of_booking',
+                    'appointment_time', 'status')
+    list_filter = ('username', 'service_name', 'dog_name', 'date_of_booking',
+                   'status')
     search_fields = ['username__username', 'dog_name']
     actions = ['approve_booking', 'reject_booking']
 

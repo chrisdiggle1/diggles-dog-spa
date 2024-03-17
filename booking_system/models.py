@@ -26,7 +26,7 @@ BOOKING_TIME = ((datetime.time(9, 0, 0), '9:00am'),
 
 class Services(models.Model):
     """
-    Model representing the services offered, detailing the service's name, 
+    Model representing the services offered, detailing the service's name,
     cost, description and the estimated duration.
 
     `__str__`: Human-readable string representation of the service.
@@ -35,7 +35,8 @@ class Services(models.Model):
     """
     service_name = models.CharField(max_length=100)
     cost = models.TextField(
-        help_text="Enter the cost range depending on dog size, e.g., 'Small Dogs: £35, Large Dogs: £100'")
+        help_text="Enter the cost range depending on dog size, e.g., "
+                  "'Small Dogs: £35, Large Dogs: £100'")
     description = models.CharField(max_length=500, blank=True)
     duration = models.DurationField(
         help_text="Estimated duration of the service")
@@ -62,8 +63,8 @@ STATUS = (
 
 class Booking(models.Model):
     """
-    Model representing a booking made by the user, including  details about the user, 
-    their dog the service booked and the appointment timing.
+    Model representing a booking made by the user, including  details about the
+    user, their dog the service booked and the appointment timing.
 
     `__str__`: Human-readable string representation of the booking.
     """
@@ -72,7 +73,8 @@ class Booking(models.Model):
     dog_name = models.CharField(max_length=100)
     dog_breed = models.CharField(max_length=100, blank=True, null=True)
     service_name = models.ForeignKey(
-        'Services', on_delete=models.CASCADE, related_name='service_name_booking')
+        'Services', on_delete=models.CASCADE,
+        related_name='service_name_booking')
     date_of_booking = models.DateField()
     appointment_time = models.TimeField(choices=BOOKING_TIME)
     confirmed = models.BooleanField(default=False)

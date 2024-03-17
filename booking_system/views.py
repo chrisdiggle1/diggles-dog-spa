@@ -23,14 +23,19 @@ def book_service(request):
 
             if date_of_booking < timezone.now().date():
                 messages.error(
-                    request, 'You cannot book appointments for dates that have already passed.')
+                    request,
+                    'You cannot book appointments for dates '
+                    'that have already passed.')
                 return redirect('book_service')
 
             existing_appointments = Booking.objects.filter(
-                date_of_booking=date_of_booking, appointment_time=appointment_time)
+                date_of_booking=date_of_booking,
+                appointment_time=appointment_time)
             if existing_appointments.exists():
                 messages.error(
-                    request, 'This appointment slot is already booked. Please choose a different time.')
+                    request,
+                    'This appointment slot is already booked. '
+                    'Please choose a different time.')
                 return redirect('book_service')
             booking = form.save(commit=False)
             booking.username = request.user
@@ -67,7 +72,6 @@ class CustomLogoutView(LogoutView):
 @login_required
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
-    
     if booking.username != request.user:
         raise PermissionDenied
 
@@ -81,10 +85,10 @@ def edit_booking(request, booking_id):
         form = BookingForm(instance=booking)
     return render(request, 'booking_system/edit_booking.html', {'form': form})
 
+
 @login_required
 def cancel_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
-    
     if booking.username != request.user:
         raise PermissionDenied
 
