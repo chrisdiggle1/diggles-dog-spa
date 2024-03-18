@@ -83,6 +83,32 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 ### Scope
 
+#### Simple and Intuitive User Experience
+
+- Ensure the navigation bar is straightforward, allowing easy access to all services offered, including grooming packages and booking appointments. Ensure it functions correctly on all devices.
+
+- Align page titles with their content, such as "Our Services," "Booking," "About Us," and "Contact."
+
+- Ensure the user gets visual feedback when navigating through the site's functionalities, such as confirmation messages on bookings and successful login and logouts.
+
+- Design the site so it matches the intent of the page. Use a colour scheme and imagery to display a sense of luxury and comfort.
+
+#### Relevant Content
+
+- Display information about the sites purpose to make its intent clear to the user.
+
+#### Core Website Functionality
+
+- Enable users to register an account, log in, and log out to manage their profiles and view booking details.
+
+- Implement an intuitive booking form for grooming appointments, allowing users to choose services, select dates/times, and provide pet details.
+
+- Allow users to view, edit, or cancel their appointments through their user account page.
+
+#### Responsiveness
+
+- Ensure the website is reposonsive across desktops, tablets and mobile devices for greater User Experience.
+
 ### Structure
 
 ### Skeleton
