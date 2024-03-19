@@ -4,16 +4,18 @@ from .forms import BookingForm, ServiceForm
 from .models import Services
 from datetime import datetime, timedelta, time
 
+
 class BookingFormTest(TestCase):
     """
     This tests the BookingForm for validation and creates a booking.
     """
 
     def setUp(self):
-        """ 
+        """
         Prepares the test user and a service instance for form testing.
         """
-        self.user = User.objects.create_user('testuser', 'test@example.com', 'testpassword')
+        self.user = User.objects.create_user(
+            'testuser', 'test@example.com', 'testpassword')
         self.service = Services.objects.create(
             service_name="Grooming Basic",
             cost="50",
@@ -23,7 +25,7 @@ class BookingFormTest(TestCase):
 
     def test_booking_form_validity(self):
         """
-        Ensures the BookingForm validates and correctly creates a booking. 
+        Ensures the BookingForm validates and correctly creates a booking.
         """
         form_data = {
             'dog_name': 'Marley',
