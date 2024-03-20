@@ -196,3 +196,95 @@ There are no errors on the WAVE tests:
 </details>
 
 <br>
+
+## Code Validation
+
+### HTML Validation
+
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website.
+
+All the site pages were tested with no errors or warnings to show:
+
+<details>
+<summary>Home Page</summary>
+<img src="static/documentation/html_tests/html-home.png">
+</details>
+
+<br>
+
+<details>
+<summary>About Page</summary>
+<img src="static/documentation/html_tests/html-about.png">
+</details>
+
+<br>
+
+<details>
+<summary>Price List Page</summary>
+<img src="static/documentation/html_tests/html-pricelist.png">
+</details>
+
+<br>
+
+<details>
+<summary>My Account Page</summary>
+<img src="static/documentation/html_tests/html-myaccount.png">
+</details>
+
+<br>
+
+<details>
+<summary>Book A Service Page</summary>
+<img src="static/documentation/html_tests/html-booking.png">
+</details>
+
+<br>
+
+<details>
+<summary>Dashboard Page</summary>
+<img src="static/documentation/html_tests/html-dashboard.png">
+</details>
+
+<br>
+
+<details>
+<summary>Login Page</summary>
+<img src="static/documentation/html_tests/html-login.png">
+</details>
+
+<br>
+
+<details>
+<summary>Logout Page</summary>
+<img src="static/documentation/html_tests/html-logout.png">
+</details>
+
+<br>
+
+<details>
+<summary>Register Page</summary>
+<img src="static/documentation/html_tests/html-signup.png">
+</details>
+
+<br>
+
+### CSS Validation
+
+The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the `style.css` file used in the website.
+
+<summary>CSS Validation</summary>
+<img src="static/documentation/css_js_tests/css-validation.png">
+
+<br>
+
+### JS Validation
+
+[JSHint](https://jshint.com/) was used to validate the one JavaScript function used in the website for automatically closing message alerts after 5 seconds. No errors were found in this function.
+
+<summary>JS Validation</summary>
+<img src="static/documentation/css_js_tests/js-validation.png">
+
+<br>
+
+### Python Code Validation (PEP8 Compliant)
+
