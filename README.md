@@ -153,14 +153,12 @@ The target audience is for dog owners seeking an easy and effeicient way to book
   - #A69CAC (a soft lavender)
   - #474973 (a deep navy)
 
-<details>
 <summary>Colour Pallette</summary>
 <img src="static/documentation/colour-pallette.png">
-</details>
 
 <br>
 
-The beige makes the site feel warm and inviting, the lavender adds a hint of luxury, and the navy brings a serious, dependable feel. Together, these colors make your site look and feel cozy yet professional, perfect for a dog spa.
+The beige makes the site feel warm and inviting, the lavender adds a hint of luxury, and the navy brings a serious, dependable feel. Together, these colors make the site look and feel cozy yet professional, perfect for diggles dog spa.
 
 ## Agile Development
 
@@ -184,6 +182,8 @@ The beige makes the site feel warm and inviting, the lavender adds a hint of lux
 ### Frameworks & Tools
 
 ## Testing and Validation
+
+All the testing documentation can be found at [TESTING.md](TESTING.md)
 
 ## Deployment & Development
 
