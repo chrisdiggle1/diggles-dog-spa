@@ -288,3 +288,61 @@ The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) wa
 
 ### Python Code Validation (PEP8 Compliant)
 
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code used in this project:
+
+<details>
+<summary>admin.py</summary>
+<img src="static/documentation/python_tests/admin-pep8.png">
+</details>
+
+<br>
+
+<details>
+<summary>apps.py</summary>
+<img src="static/documentation/python_tests/apps-pep8.png">
+</details>
+
+<br>
+
+<details>
+<summary>forms.py</summary>
+<img src="static/documentation/python_tests/forms-pep8.png">
+</details>
+
+<br>
+
+<details>
+<summary>models.py</summary>
+<img src="static/documentation/python_tests/models-pep8.png">
+</details>
+
+<br>
+
+<details>
+<summary>urls.py</summary>
+<img src="static/documentation/python_tests/urls-pep8.png">
+</details>
+
+<br>
+
+<details>
+<summary>views.py</summary>
+<img src="static/documentation/python_tests/views-pep8.png">
+</details>
+
+<br>
+
+## Testing
+
+### Manual Testing
+
+Behavior-driven development (BDD) is an Agile software development methodology in which an application is documented and designed around the behavior a user expects to experience when interacting with it. This process is used to test user stories in a non-technical way, allowing anyone to test the features of an app.
+
+**EPIC: Site navigation and content**
+| ID | User Story | Action/Expected Results | Pass |
+| -- | ---------- | ----------------------- | ---- |
+| 1A | As a site visitor I can view the site menu so that easily navigate through the site. | A visitor to the site can see a navigation bar in the header. The navbar has links to all the pages of the website. When clicking on the disered link the relevant page opens. Clicking on the title takes the user back to the homepage. When the site is viewed on smaller devices, a navbar toggler (burger menu) is displayed and when clicked, the site links drop down and take you to the desired page when clicked | :white_check_mark: |
+| 1B | As a site visitor I can see the relevant information so that I can decide if I want to register for an account and become a customer. | For first time users who aren't registered, the home screen is displayed with a main image and a paragraph to obtain the visiors attention and shows the purpose of the site. The visitor can view the 'about' page with details about the dog spa and a list of sevices provided. There is a price List page which displays each service and a list of dog breeds in the size category. | :white_check_mark: |
+| 1C | As a site visitor I can access different pages on the site so that I can smoothly navigate through the functionality of the site. | All the pages on the site can be clciked and taken to the desired page. the pages have been designed with good UX in mind. The pages are uncluttered and the content matches the link. | :white_check_mark: |
+| 1D | As a customer I can view detailed information about each grooming service so that I can make a decision on what service I would like my dog to have. | The visitor can view the 'price list' page where each service is displayed as a seperate card with a button to click to view more information, when clicking this a modal appears with a description of the service, cost and duration. the user can then click to close the modal or click 'login to book' which will take them to the 'login' page with also a link to sign up if not registered. This page also displays a list of in their size category. | :white_check_mark: |
+| 1E | As a site visitor I can click and view the sites social media so that I can view more information via social media. | The site visitor can click on the social media icons in the footer and that will take them to the selected social media website. | :white_check_mark: |
