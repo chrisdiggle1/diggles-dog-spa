@@ -78,9 +78,32 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Booking updated successfully.')
-            return redirect('my_account')
+            date_of_booking = form.cleaned_data['date_of_booking']
+            if date_of_booking < timezone.now().date():
+                messages.error(request,
+                               'You cannot set a booking for dates that have '
+                               'already passed.')
+                return render(request, 'booking_system/edit_booking.html',
+                              {'form': form})
+
+            appointment_time = form.cleaned_data['appointment_time']
+            existing_appointments = Booking.objects.exclude(
+                id=booking_id).filter(date_of_booking=date_of_booking,
+                                      appointment_time=appointment_time)
+            if existing_appointments.exists():
+                messages.error(request,
+                               'This appointment slot is already booked. '
+                               ' Please choose a different time.')
+                return render(request, 'booking_system/edit_booking.html',
+                              {'form': form})
+
+            if booking.status == 'approved':
+                booking.status = 'pending'
+                booking.save()
+                messages.success(request,
+                                 'Booking updated successfully. It is now '
+                                 'pending approval.')
+                return redirect('my_account')
     else:
         form = BookingForm(instance=booking)
     return render(request, 'booking_system/edit_booking.html', {'form': form})
