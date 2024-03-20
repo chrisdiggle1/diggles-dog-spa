@@ -77,6 +77,13 @@
 
 <br>
 
+<details>
+<summary>Register Page</summary>
+<img src="static/documentation/lighthouse_tests/desktop-register.png">
+</details>
+
+<br>
+
 ### Mobile
 
 <details>
@@ -131,6 +138,61 @@
 <details>
 <summary>Logout Page</summary>
 <img src="static/documentation/lighthouse_tests/mobile-logout.png">
+</details>
+
+<br>
+
+<details>
+<summary>Register Page</summary>
+<img src="static/documentation/lighthouse_tests/mobile-register.png">
+</details>
+
+<br>
+
+## Accessibility
+
+The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/) was used to ensure the website meets accessibility standards.
+
+There are no errors on the WAVE tests:
+
+<details>
+<summary>Home Page</summary>
+<img src="static/documentation/wave_tests/wave-home.png">
+</details>
+
+<br>
+
+<details>
+<summary>About Page</summary>
+<img src="static/documentation/wave_tests/wave-about.png">
+</details>
+
+<br>
+
+<details>
+<summary>Price List Page</summary>
+<img src="static/documentation/wave_tests/wave-pricelist.png">
+</details>
+
+<br>
+
+<details>
+<summary>Login Page</summary>
+<img src="static/documentation/wave_tests/wave-login.png">
+</details>
+
+<br>
+
+<details>
+<summary>Logout Page</summary>
+<img src="static/documentation/wave_tests/wave-logout.png">
+</details>
+
+<br>
+
+<details>
+<summary>Register Page</summary>
+<img src="static/documentation/wave_tests/wave-register.png">
 </details>
 
 <br>
