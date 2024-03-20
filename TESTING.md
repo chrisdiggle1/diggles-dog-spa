@@ -370,3 +370,49 @@ Behavior-driven development (BDD) is an Agile software development methodology i
 | 4A | As an admin I can view, confirm, and reject bookings so that I can manage the grooming schedule efficiently. | When logged in as site admin only, an extra link is displayed in the navbar for the 'dashboard' this displays a bookings section that displays bookings that have been approved or rejected already. A 'Pending Approvals' section is displayed in the dashboard, where any bookings that have been requested are displayed with an 'approve' or 'reject' button. Click 'approve' this displays a green approval message on the booking card and updates the user who made the bookings card in their account with the approved message also displayed, in the dashboard, the booking card is automatically moved from 'Pending Approvals' to 'Bookings'. This is the same when choosing 'reject' but a red message is displayed on the booking card stating the booking has been rejected. | :white_check_mark: |
 | 4B | As an admin I can add a new grooming service to the website so that customers have a variety of options to choose from. | When logged in as site admin only, an extra link is displayed in the navbar for the 'dashboard' this displays a 'Services' section which displays all the services the site offers as service cards with a 'Add New Service' button, click this and the add new service from is displayed, fill in the fields and click 'save', confirmation message is displayed, new service card is immediately displayed in the admin dashboard, on the price list page and in the django admin panel. | :white_check_mark: |
 | 4C | As an admin I can remove a grooming service from the website if we decide a service is longer required. | When logged in as site admin only, an extra link is displayed in the navbar for the 'dashboard' this displays a 'Services' section which displays all the services the site offers as service cards with a 'delete' button.To delete a service click 'delete', a modal appears to confirm the delete. Click 'delete' again, confirmation message is displayed service is removed from 'services' in the dashboard, from the service cards on the price list page and from the django admin panel. | :white_check_mark: | :white_check_mark: |
+
+### Automated Testing
+
+Some basic automated tests have been carried written and used based on the instructions and guidance on the Code Institute LMS 'Hello Django' walkthrough prjoject. The 3 files used for testing are located in booking_system/templates/booking_system:
+
+- `tests_forms.py`
+- `tests_models.py`
+- `tests_views.py`
+
+The following websites were also used for assitance and guidance for automated testing: 
+
+- https://docs.djangoproject.com/en/5.0/topics/testing/tools/
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing
+- https://stackoverflow.com/questions/7304248/how-should-i-write-tests-for-forms-in-django
+- https://www.valentinog.com/blog/testing-modelform/
+
+Automated Testing Results:
+
+- tests_forms.py
+
+<img src="static/documentation/auto_tests/tests-forms.png">
+
+<br>
+
+- tests_models.py
+
+<img src="static/documentation/auto_tests/tests-models.png">
+
+<br>
+
+- tests_views.py
+
+<img src="static/documentation/auto_tests/tests-views.png">
+
+<br>
+
+### Browser Testing
+
+The website has been tested on the following browsers and encountered no issues:
+
+- Edge
+- Chrome
+- Safari
+
+## Bugs and Fixes
+
