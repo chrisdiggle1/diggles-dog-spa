@@ -8,7 +8,7 @@
   - [HTML Validation](#html-validation)
   - [CSS Validation](#css-validation)
   - [JS Validation](#js-validation)
-  - [PEP8 Validation](#python-code-validation)
+  - [PEP8 Validation](#pep8-validation)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
@@ -416,3 +416,13 @@ The website has been tested on the following browsers and encountered no issues:
 
 ## Bugs and Fixes
 
+| **Bug**                         | **Fix**                            |
+|---------------------------------|------------------------------------|
+| Navbar on mobile not rendering - couldnt see the 'burger button' to drop down the menu. | Add bootstrap class img-fluid - which applies max-width: 100%; and height: auto; to the image so it scales down for smaller viewports. |
+| Unable to set the success message bar to sit nicely between the navbar and page header. | Targeted the alert-dismissable class in css after correctly setting message alert using bootstrap and Javascript. | 
+| Unable to remove bullet points above username and password fields stating 'This field is required' | Missed a seperating comma when installing crispy-forms in INSTALLED APPS between crispy_bootstrap5 and cloudinary_storage. Added the comma and the form rendered correctly removing the 2 unwanted bulletpoints. |
+| Static files not being issued on Heorku. | Install and setup whitnoise. |
+| Static files failed to work when changes were pushed to Github and deployed. | Run the 'collectstatic' command on any static changes before pushing to GitHub. |
+| Appointment time on the site is half an hour behind what the django admin panel is displaying. | Added USE_L10N = True in setting.py file. |
+
+[Return to the README](README.md)
