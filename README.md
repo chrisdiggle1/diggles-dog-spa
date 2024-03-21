@@ -160,16 +160,179 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 
 The beige makes the site feel warm and inviting, the lavender adds a hint of luxury, and the navy brings a serious, dependable feel. Together, these colors make the site look and feel cozy yet professional, perfect for Diggles dog spa.
 
+
+### Font
+madimi one has been used as the font throughout the website.
+
+<img src="static/documentation/font.png">
+
 ## Agile Development
+
+The development of this project was managed through GitHub issues and projects and the work was done in sprints.
+
+### Sprints
+
+- Sprint 1
+
+  - Setup CI template
+  - Create user story template
+  - Install packages
+  - Create the project and app
+  - setup database
+  - Create base.html and navbar
+  - Create footer with social media links
+
+- Sprint 2
+
+  - Create booking and services models
+  - Create the pages used for the site
+  - Install django allauth
+  - Register an account
+  - View available services
+  - Create a booking
+  - Cancel a booking
+  - Edit a booking
+
+- Sprint 3
+
+  - Prevent Double bookings
+  - Prevent bookings on past dates
+  - Create custom 403 page
+  - Create custom 404 page
+  - Create custom 500 page
+
+- Sprint 4
+
+  - Create Admin Dashboard
+  - Admin to be able to approve/reject bookings from the dashboard
+  - Admin to be able to add/ remove services from the dashboard.
+  - Testing
+  - Readme
+  - Submission
 
 ## Current Features
 
 ### Header and Navigation
 
+Navbar with logo, website name, and links to all pages. On small to medium screens the navigation links are displayed as a burger menu with the links to other pages dropping down.
+
+<details>
+<summary>Desktop navbar for unregistered/logged out users</summary>
+<img src="static/documentation/features/nav-desktop1.png">
+</details>
+
+<br>
+
+<details>
+<summary>Desktop navbar for registered/logged in users</summary>
+<img src="static/documentation/features/nav-desktop2.png">
+</details>
+
+<br>
+
+<details>
+<summary>Desktop navbar for site administrators - Have a link to admin dashboard.</summary>
+<img src="static/documentation/features/nav-desktop3.png">
+</details>
+
+<br>
+
 <details>
 <summary>Navbar display on mobile devices</summary>
-<img src="static/documentation/navbar-mobile.png">
+<img src="static/documentation/features/navbar-mobile.png">
 </details>
+
+<br>
+
+<details>
+<summary>Navbar expanded on mobile devices</summary>
+<img src="static/documentation/features/nav-mobile2.png">
+</details>
+
+### Footer
+
+<details>
+<summary>Footer displaying social media icons as clickable links and copyright feature.</summary>
+<img src="static/documentation/features/footer.png">
+</details>
+
+### Site pages
+
+<details>
+<summary>Home Page</summary>
+<img src="static/documentation/features/home-desktop.png">
+</details>
+
+<br>
+
+<details>
+<summary>About Page</summary>
+<img src="static/documentation/features/about.png">
+</details>
+
+<br>
+
+<details>
+<summary>Price List Page</summary>
+<img src="static/documentation/features/price-list.png">
+</details>
+
+<br>
+
+<details>
+<summary>Register Page</summary>
+<img src="static/documentation/features/reigster.png">
+</details>
+
+<br>
+
+<details>
+<summary>Login Page</summary>
+<img src="static/documentation/features/login.png">
+</details>
+
+<br>
+
+<details>
+<summary>My Account Page</summary>
+<img src="static/documentation/features/myaccount.png">
+</details>
+
+<br>
+
+<details>
+<summary>Book A Service Page</summary>
+<img src="static/documentation/features/book-service.png">
+</details>
+
+<br>
+
+<details>
+<summary>Admin Dashboard - Bookings and Pending Approvals</summary>
+<img src="static/documentation/features/dashboard1.png">
+</details>
+
+<br>
+
+<details>
+<summary>Admin Dashboard - Services</summary>
+<img src="static/documentation/features/dashboard2.png">
+</details>
+
+<br>
+
+<details>
+<summary>Add New Service Form</summary>
+<img src="static/documentation/features/service-form.png">
+</details>
+
+<br>
+
+<details>
+<summary>Logout</summary>
+<img src="static/documentation/features/logout.png">
+</details>
+
 
 ## Future Features
 
