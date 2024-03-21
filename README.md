@@ -80,6 +80,7 @@ The target audience is for dog owners seeking an easy and effeicient way to book
 | **ADMIN CAPABILITIES**     |     |           |
 |                            | 4A  | As an admin I can view, confirm, and cancel bookings so that I can manage the grooming schedule efficiently. |
 |                            | 4B  | As an admin I can add a new grooming service to the website so that customers have a variety of options to choose from. |
+|                            | 4C  | As an admin I can remove a grooming service from the website if we decide a service is longer required. |
 
 ### Scope
 
@@ -209,6 +210,18 @@ The development of this project was managed through GitHub issues and projects a
   - Testing
   - Readme
   - Submission
+
+<details>
+<summary>GitHub Issues</summary>
+<img src="static/documentation/GitHub Issues.png">
+</details>
+
+<br>
+
+<details>
+<summary>GitHub Projects</summary>
+<img src="static/documentation/GitHub Projects.png">
+</details>
 
 ## Current Features
 
@@ -355,7 +368,7 @@ Each time a user out a function on the website, either as part of the account fu
 
 ## Future Features
 
-- Password Reset Option o allow the user to retrieve/reset their password if they have lost/forgotten it is also quite important and should be added for a more complete user experience.
+- Password reset option to allow the user to retrieve/reset their password if they have lost/forgotten it is also quite important and should be added for a more complete user experience.
 - Automated emails for both admin and user when a new booking is requested and the user to be informed if the booking is approved or rejected.
 - Capability to login with socal media accounts.
 - Message on the booking card stating why the booking is rejected.
@@ -378,7 +391,7 @@ Each time a user out a function on the website, either as part of the account fu
 - dj3-cloudinary-storage - facilitates integration with Cloudinary by implementing Django Storage API.
 - django-allauth - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 - django-crispy-forms - provides a crispy filter and {% crispy %} tag that allows control of the rendering behavior of Django forms in a very elegant and DRY way.
-- crispy-boostrap5 - Bootstrap4 template pack for django-crispy-forms.
+- crispy-boostrap5 - Bootstrap5 template pack for django-crispy-forms.
 
 ### Frameworks & Tools
 
