@@ -400,6 +400,76 @@ All the testing documentation can be found at [TESTING.md](TESTING.md)
 
 ## Deployment & Development
 
+### Deploy on Heroku
+
+**Requirements and Procfile Files**
+
+Before deployment on Heroku, two files need to be created and be up to date, a `requirements.txt` file and a `Procfile`.
+
+- The `requirements.txt` file is created by executing the following command in the terminal window: ` pip3 freeze --local > requirements.txt`. A file with all requirements will be created.
+- Then create a file named `Procfile` and insert the following code: `web: gunicorn digglesdogspa.wsgi`, with no empty lines after it.
+- Then make sure to push these files to your repository.
+
+**Creating A New Heroku App**
+
+- Log into Heroku your Heroku and go to the Dashboard.
+- Click "New" and then select "Create new app".
+- Give your app a name and select the region closest to you.
+- Click "Create app" to confirm.
+
+**PostgreSQL**
+
+The database for this site was created using [Code Institutes Postgres Database Creator](https://dbs.ci-dbs.net/)
+
+**The env.py file**
+
+- If you do not have a `env.py` file in your workspace create one and make sure it is included in the `.gitignore` file.
+- At the top of the `env.py` file add the line: `import os`.
+- Below that add the following two lines:
+
+  `os.environ["DATABASE_URL"] = "<copied URL from SQL database>"` 
+  `os.environ["SECRET_KEY"] = "<create a secret key of your own>"` 
+
+- If you are using Cloudinary storage also add the following line:
+
+  `os.environ["CLOUDINARY_URL"] = "<copied URL from Cloudinary account>"`
+
+- Make sure the environment variables are imported correctly into the `settings.py` file.
+- Run `python manage.py migrate` in the terminal window to migrate the data structure to the database instance.
+
+**Setting Environment Variables**
+
+- On the Heroku Dashboard select the app you just created, select the "Settings" tab.
+- Click "Reveal Config Vars"
+- Add the following config vars:
+
+  `DATABASE_URL` - copy the database URL emailed from the Code Institute when creating the Postgres database in here, it should also be in the `env.py` file.
+  `SECRET_KEY` - copy your secret key in here, should also be in env.py file.
+
+**Connecting to GitHub and Deploy**
+
+- On the Heroku Dashboard select the app you just created and then select the "Deploy" tab.
+- Select GitHub for the deployment method.
+- Search for the name of your project repository and click "Connect".
+- Select "Deploy Branch" and watch the app being built and you can view the build logs.
+
+### Forking the Repository
+
+- Log in to GitHub and locate the GitHub repository you want to fork.
+- At the top of the Repository above the "Settings" Tab on the menu, locate the "Fork" Button and click it.
+- You will have a copy of the original repository in your GitHub account.
+- You will now be able to make changes to the new version and keep the original safe.
+
+### Making a Local Clone
+
+- Log into GitHub and locate the repository you want to clone.
+- Click the 'Code' dropdown above the file list.
+- Copy the URL for the repository.
+- Open Git Bash in your IDE.
+- Change the current working directory to the location where you want the cloned directory.
+- Type `git clone` in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  `$ git clone https://github.com/`
+- Press Enter to create your local clone.
 
 ## Credits
 
