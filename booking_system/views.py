@@ -14,6 +14,11 @@ from django.core.exceptions import PermissionDenied
 
 
 def book_service(request):
+    """
+    Handles service booking requests. Validates the form on POST,
+    checks for past dates or booked slots, and either saves the
+    booking or returns an error.
+    """
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -49,6 +54,10 @@ def book_service(request):
 
 
 class BookingsList(LoginRequiredMixin, generic.ListView):
+    """
+    Displays a paginated list of future bookings for the current
+    logged-in user.
+    """
     model = Booking
     template_name = "booking_system/my_account.html"
     paginate_by = 20
@@ -62,6 +71,10 @@ class BookingsList(LoginRequiredMixin, generic.ListView):
 
 
 class CustomLogoutView(LogoutView):
+    """
+    Custom logout view that redirects to the home page after
+    logging out and displays a success message.
+    """
     next_page = reverse_lazy('home')
 
     def dispatch(self, request, *args, **kwargs):
@@ -71,6 +84,13 @@ class CustomLogoutView(LogoutView):
 
 @login_required
 def edit_booking(request, booking_id):
+    """
+    Allows a user to edit an existing booking. Validates the edited booking
+    details, checks for past dates or conflicting slots, and updates the
+    booking. If the edited booking date is in the past or the slot is already
+    taken, it returns an error. Changes booking status to 'pending' if it was
+    'approved'.
+    """
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.username != request.user:
         raise PermissionDenied
@@ -111,6 +131,10 @@ def edit_booking(request, booking_id):
 
 @login_required
 def cancel_booking(request, booking_id):
+    """
+    Cancels an existing booking if the logged-in user is the owner. Deletes
+    the booking and displays a success message.
+    """
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.username != request.user:
         raise PermissionDenied
@@ -152,6 +176,11 @@ def is_superuser(user):
 @login_required
 @user_passes_test(is_superuser)
 def dashboard(request):
+    """
+    Renders the admin dashboard with lists of bookings and services.
+    Seperates bookings into approved and rejected bookings,
+    pending approvals, and services the business offers.
+    """
     bookings = Booking.objects.exclude(status='pending')
     pending_approvals = Booking.objects.filter(status='pending')
     approved_bookings = Booking.objects.filter(status='approved')
@@ -167,6 +196,11 @@ def dashboard(request):
 @login_required
 @user_passes_test(is_superuser)
 def approve_booking(request, booking_id):
+    """
+    Approves a pending booking based on its ID. Sets the booking
+    status to 'approved', saves the changes, and displays a success
+    message.
+    """
     booking = get_object_or_404(Booking, id=booking_id)
     booking.status = 'approved'
     booking.save()
@@ -177,6 +211,11 @@ def approve_booking(request, booking_id):
 @login_required
 @user_passes_test(is_superuser)
 def reject_booking(request, booking_id):
+    """
+    Rejects a pending booking based on its ID by setting the booking
+    status to 'rejected', saves the update, and displays a success
+    message to the administrator.
+    """
     booking = get_object_or_404(Booking, id=booking_id)
     booking.status = 'rejected'
     booking.save()
@@ -187,6 +226,12 @@ def reject_booking(request, booking_id):
 @login_required
 @user_passes_test(is_superuser)
 def add_service(request):
+    """
+    Allows the admin to add a new service. On POST, validates the service
+    form, saves the new service if valid, displays a success message, and
+    redirects to the dashboard, otherwsie displays the form for adding a
+    service.
+    """
     if request.method == 'POST':
         form = ServiceForm(request.POST)
         if form.is_valid():
@@ -201,6 +246,11 @@ def add_service(request):
 @login_required
 @user_passes_test(is_superuser)
 def delete_service(request, service_id):
+    """
+    Deletes a specific service identified by its ID. Notifies the
+    adminstrator of successful deletion with a message and redirects
+    to the dashboard.
+    """
     service = Services.objects.get(id=service_id)
     service.delete()
     messages.success(request, 'Service deleted successfully.')
