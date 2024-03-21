@@ -334,21 +334,72 @@ Navbar with logo, website name, and links to all pages. On small to medium scree
 </details>
 
 
+### Success Messages
+
+Each time a user out a function on the website, either as part of the account functionality or the CRUD functionality, a success message will be displayed confirming that the function was carried out successfully and also error messages if the user tries to book appointments in the past or double book.
+
+<img src="static/documentation/features/signin-mess.png">
+
+<img src="static/documentation/features/signout-mess.png">
+
+<img src="static/documentation/features/book-success.png">
+
+<img src="static/documentation/features/book-cancel.png">
+
+<img src="static/documentation/features/edit-booking.png">
+
+<img src="static/documentation/features/double-booking.png">
+
+<img src="static/documentation/features/past-dates.png">
+
+
 ## Future Features
+
+- Password Reset Option o allow the user to retrieve/reset their password if they have lost/forgotten it is also quite important and should be added for a more complete user experience.
+- Automated emails for both admin and user when a new booking is requested and the user to be informed if the booking is approved or rejected.
+- Capability to login with socal media accounts.
+- Message on the booking card stating why the booking is rejected.
+- Review features for the website
+- The user to have the ability to delete their own account.
 
 ## Technologies Used
 
 ### Languages
 
+- HTML
+- CSS
+- JavaScript
+- Python
+
 ### Python Packages
 
+- django - high-level Python web framework used to develop this application/site.
+- psycopg2 - PostgreSQL database adapter for the Python programming language.
+- dj3-cloudinary-storage - facilitates integration with Cloudinary by implementing Django Storage API.
+- django-allauth - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+- django-crispy-forms - provides a crispy filter and {% crispy %} tag that allows control of the rendering behavior of Django forms in a very elegant and DRY way.
+- crispy-boostrap5 - Bootstrap4 template pack for django-crispy-forms.
+
 ### Frameworks & Tools
+
+- Git - used for version control
+- GitHub - used to host the source code of the website.
+- Django - used to set up the back-logic and both custom models on the website.
+- Gitpod -used to write and develop the code for the website, and for committing and pushing code to GitHub.
+- Heroku - used to deploy the website
+- Cloudinary - used to store the website media
+- Bootstrap - used throughout the site for responsiveness, layout, and predefined style elements.
+- Balsamiq - used to create the project wireframes.
+- Lucid Chart - used for creating the ERD.
+- Google Fonts - used to import fonts for the website.
+
 
 ## Testing and Validation
 
 All the testing documentation can be found at [TESTING.md](TESTING.md)
 
 ## Deployment & Development
+
 
 ## Credits
 
