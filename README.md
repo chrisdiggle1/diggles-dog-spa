@@ -488,6 +488,36 @@ The database for this site was created using [Code Institutes Postgres Database 
 
 ### Media
 
+- The image for the homepage was purchased from [iStock](https://www.istockphoto.com/sign-in?returnurl=%2Faccount%2Fdownload%2Findividual%2Fcredits) - Credit: Eriklam.
+
+- The 2 images on the about page were taken from [pexels](https://www.pexels.com/search/dog%20groomer/).
+
+- The site logo and favicon was taken from [pngegg](https://www.pngegg.com/).
+
 ### Code
 
+- The Code Institutes I Think Therefore I Blog' Django walkthrough project was followed for the initial set up and getting started with the code.
+
+- The following sites were used frequently for guidance and troubleshooting:
+
+  - [Django Documentation](https://docs.djangoproject.com/en/4.2/)
+  - [Stack Overflow](https://stackoverflow.com/)
+  - [W3 Schools](https://www.w3schools.com/)
+
+- [Bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
+- [Ultimate Django Course](https://codewithmosh.com/p/the-ultimate-django-part1) - part of my code with mosh subscription.
+
 ## Acknowledgements
+
+- First of all, I would like to show my appreciation for my employee for giving me a chance as a junior developer. The last 7 months I have been in the role I have learnt so much and far quicker than I would if I was just studyingg in my own time.
+
+- Which leads me onto my fellow developers who help and answer any questions I have. Having access to other devs all day everyday has been unreal for my learning.
+
+- My wife Kirsty for her support during this and all the other projects, taking the kids out so I can study in peace, bringing regular coffee to keep me going and telling me to take a break when I struggled with an issue.
+
+- My kids for wanting to be part of the project and choosing the colours and picking out the images on the site, also for being good as gold and letting me do my studies without much hassle.
+
+- My Mentor Greame Taylor for his guidance, tips, support and feedback during this project.
+
+- The Slack community for when you need help, a laugh or to help somebody else out.
