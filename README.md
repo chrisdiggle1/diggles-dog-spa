@@ -346,6 +346,27 @@ Navbar with logo, website name, and links to all pages. On small to medium scree
 <img src="static/documentation/features/logout.png">
 </details>
 
+<br>
+
+<details>
+<summary>Custom 403</summary>
+<img src="static/documentation/features/403-error.png">
+</details>
+
+<br>
+
+<details>
+<summary>Custom 404</summary>
+<img src="static/documentation/features/404-error.png">
+</details>
+
+<br>
+
+<details>
+<summary>Custom 500</summary>
+<img src="static/documentation/features/500-error.png">
+</details>
+
 
 ### Success Messages
 
