@@ -3,6 +3,9 @@ from .models import Booking, Services
 
 
 class BookingForm(forms.ModelForm):
+    """
+    Form for booking appointments utilizing the Booking model.
+    """
     class Meta:
         model = Booking
         fields = [
@@ -17,6 +20,10 @@ class BookingForm(forms.ModelForm):
 
 
 class ServiceForm(forms.ModelForm):
+    """
+    Form for adding or editing services in the system, utilizing the 
+    Services model.
+    """
     class Meta:
         model = Services
         fields = ['service_name', 'cost', 'description', 'duration']
