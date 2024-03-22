@@ -88,8 +88,8 @@ def edit_booking(request, booking_id):
     Allows a user to edit an existing booking. Validates the edited booking
     details, checks for past dates or conflicting slots, and updates the
     booking. If the edited booking date is in the past or the slot is already
-    taken, it returns an error. Changes booking status to 'pending' if it was
-    'approved'.
+    taken, it returns an error. Sets booking status to 'pending' after an edit,
+    suitable for bookings that were either 'approved' or 'rejected'.
     """
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.username != request.user:
@@ -113,17 +113,16 @@ def edit_booking(request, booking_id):
             if existing_appointments.exists():
                 messages.error(request,
                                'This appointment slot is already booked. '
-                               ' Please choose a different time.')
+                               'Please choose a different time.')
                 return render(request, 'booking_system/edit_booking.html',
                               {'form': form})
 
-            if booking.status == 'approved':
-                booking.status = 'pending'
-                booking.save()
-                messages.success(request,
-                                 'Booking updated successfully. It is now '
-                                 'pending approval.')
-                return redirect('my_account')
+            booking.status = 'pending'
+            booking.save()
+            messages.success(request,
+                             'Booking updated successfully. It is now '
+                             'pending approval.')
+            return redirect('my_account')
     else:
         form = BookingForm(instance=booking)
     return render(request, 'booking_system/edit_booking.html', {'form': form})
