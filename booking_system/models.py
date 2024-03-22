@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+from django.utils.dateformat import DateFormat
 
 
 STATUS = ((0, "Pending"), (1, "Confirmed"))
@@ -87,3 +88,6 @@ class Booking(models.Model):
     def __str__(self):
         return (f"{self.service_name} for {self.dog_name} "
                 f"on {self.date_of_booking} at {self.appointment_time}")
+
+    def formatted_time(self):
+        return DateFormat(self.appointment_time).format('P')

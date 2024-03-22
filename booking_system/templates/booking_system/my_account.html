@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <p>Appointment Date: {{ booking.date_of_booking|date:"l j F Y" }}</p>
-                    <p>Appointment Time: {{ booking.appointment_time|date:"g a" }}</p>
+                    <p>Appointment Time: {{ booking.formatted_time }}</p>
                     <p>Username: {{ booking.username }}</p>
                     <p>Dog's Name: {{ booking.dog_name }}</p>
                     <p>Service Booked: {{ booking.service_name }}</p>

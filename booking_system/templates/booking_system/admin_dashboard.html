@@ -58,7 +58,7 @@ Dashboard - Diggles Dog Spa
                     <p class="card-text">Dog Breed: {{ booking.dog_breed }}</p>
                     <p class="card-text">Service: {{ booking.service_name }}</p>
                     <p class="card-text">Appointment Date: {{ booking.date_of_booking }}</p>
-                    <p class="card-text">Appointment Time: {{ booking.appointment_time }}</p>
+                    <p class="card-text">Appointment Time: {{ booking.formatted_time }}</p>
                     <div class="button-group d-flex flex-column flex-md-row justify-content-around">
                         <form method="POST" action="{% url 'approve_booking' booking.id %}">
                             {% csrf_token %}
