@@ -169,7 +169,11 @@ madimi one has been used as the font throughout the website.
 
 ## Agile Development
 
-The development of this project was managed through GitHub issues and projects and the work was done in sprints.
+The development of this project was managed through GitHub issues and projects and the work was done in sprints. Story points were used a way to judge how long a user story may take to complete. Story points are recorded using labels attached to the user story.
+
+In order to judge story points the following user story was used as the base guide and given a value of 2 story points as this is a short task and something I am familiar with. I set myself 40 story points for each week:
+
+`USER STORY 1C: Site Pagination` accesing all the different pages the site has to offer and navigate through the functionality of the site.
 
 ### Sprints
 
@@ -211,12 +215,25 @@ The development of this project was managed through GitHub issues and projects a
   - Readme
   - Submission
 
+<br>
+
+I created additional labels for my 'project issues' and assigned these to the relevant user stories..
+
+<details>
+<summary>GitHub Labels</summary>
+<img src="static/documentation/labels.png">
+</details>
+
+<br>
+
 <details>
 <summary>GitHub Issues</summary>
 <img src="static/documentation/GitHub Issues.png">
 </details>
 
 <br>
+
+Epics were identified across the various user stories, MoSCoW prioritisation was utilised throughout the project and each issue was assigned both an epic label and MoSCoW label (must have, should have, could have). As issues were completed, each was moved from To Do --> In Progress and finally --> Done on the KanBan board.
 
 <details>
 <summary>GitHub Projects</summary>
